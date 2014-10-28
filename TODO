@@ -1,0 +1,3 @@
+* Make simulate-gate show input also.
+* Make simulate return the output for all the possible combinatios.
+* Add documentation for the package.
