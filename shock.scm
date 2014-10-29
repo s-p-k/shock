@@ -20,6 +20,7 @@
 	  (result #f))
       (cond ((eq? l 2)
 	     (begin (set! result (and (car signal)
+
 				      (cadr signal)))
 		    result))
 	    (else (begin (- l 1)
@@ -64,21 +65,21 @@
 
 ;; define signal values for testing (everything 0)
 
-(define a-signal #f)
-(define b-signal #f)
-(define c-signal #f)
-(define d-signal #f)
-(define e-signal #f)
+;; (define a-signal #f)
+;; (define b-signal #f)
+;; (define c-signal #f)
+;; (define d-signal #f)
+;; (define e-signal #f)
 
 ;; create the circuit drawn above and simulate for the above signal values
 
-(define simulate
-  (lambda ()
-    (and-gate (list e-signal
-		    (not-gate (or-gate (list (and-gate (list a-signal
-							     b-signal))
-					 (and-gate (list c-signal
-							 d-signal)))))))))
+;; (define simulate
+;;   (lambda ()
+;;     (and-gate (list e-signal
+;; 		    (not-gate (or-gate (list (and-gate (list a-signal
+;; 							     b-signal))
+;; 					 (and-gate (list c-signal
+;; 							 d-signal)))))))))
 
 ;; return the number of possible combinations given a list and a number n
 
@@ -167,7 +168,7 @@
 ;; simulate gate currently shows only the output, it should be showing the
 ;; input too.
 
-(define simulate-gate
-  (lambda (gate n) ; n i number of inputs
-    (map gate (n-inputs n)))) ; n-inputs is the generic form of 2-inputs.
+;; (define simulate-gate
+;;   (lambda (gate n) ; n i number of inputs
+;;     (map gate (n-inputs n)))) ; n-inputs is the generic form of 2-inputs.
 	  
