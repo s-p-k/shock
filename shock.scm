@@ -147,7 +147,6 @@
     (map flatten-list (append (produce-list (2-inputs) #f)
 			      (produce-list (2-inputs) #t)))))
 
-
 ;; n inputs is the generic form of 2-inputs and 3-inputs
 
 (define n-inputs
@@ -180,15 +179,11 @@
   (lambda (gate n len w)
     (let ((results (map gate (n-inputs n))) ; simulation results
 	  (inputs (n-inputs n))) ; all possible inputs
-      (cond ((eq? len 0) (display "Simulation ended successfully"))
-	    (else (begin (display "input: ")
-			 (display (list-ref inputs w))
-			 (newline)
-			 (display "output: ")
-			 (display (list-ref results w))
-			 (newline)
+      (cond ((eq? len 0) (format #t "Simulation ended successfully.~%"))
+	    (else (begin (format #t "input: ~A -----> ~A~%"
+				 (list-ref inputs w)
+				 (list-ref results w))
 			 (simulate-gate-iter gate
 					     n
 					     (- len 1)
 					     (+ w 1))))))))
-
