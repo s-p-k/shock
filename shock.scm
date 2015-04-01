@@ -137,10 +137,6 @@
 
 (define simulate-gate
   (lambda (gate n)
-      (simulate-gate-iter gate n)))
-
-(define simulate-gate-iter
-  (lambda (gate n)
     (let loop ((results (map gate (n-inputs n))) ; simulation results
 	       (inputs (n-inputs n)) ; all possible inputs
 	       (k 0)
