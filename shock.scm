@@ -20,7 +20,6 @@
 	  (result #f))
       (cond ((eq? l 2)
 	     (begin (set! result (and (car signal)
-
 				      (cadr signal)))
 		    result))
 	    (else (begin (- l 1)
