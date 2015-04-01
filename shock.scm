@@ -165,10 +165,30 @@
 	       (newline)
 	       (pretty-print (cdr lst))))))
 
-;; simulate gate currently shows only the output, it should be showing the
-;; input too.
+(define simulate
+  (lambda (gate n)
+    (pretty-print (map gate (n-inputs n)))))
 
-;; (define simulate-gate
-;;   (lambda (gate n) ; n i number of inputs
-;;     (map gate (n-inputs n)))) ; n-inputs is the generic form of 2-inputs.
-	  
+(define simulate-gate
+  (lambda (gate n)
+    (simulate-gate-iter gate
+			n
+			(length (n-inputs n))
+			0)))
+
+(define simulate-gate-iter
+  (lambda (gate n len w)
+    (let ((results (map gate (n-inputs n))) ; simulation results
+	  (inputs (n-inputs n))) ; all possible inputs
+      (cond ((eq? len 0) (display "Simulation ended successfully"))
+	    (else (begin (display "input: ")
+			 (display (list-ref inputs w))
+			 (newline)
+			 (display "output: ")
+			 (display (list-ref results w))
+			 (newline)
+			 (simulate-gate-iter gate
+					     n
+					     (- len 1)
+					     (+ w 1))))))))
+
