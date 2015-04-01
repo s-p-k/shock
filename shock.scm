@@ -12,7 +12,7 @@
 (define and-gate
   (lambda (signal)
 	  (cond ((list? signal) (and-gate-iter signal))
-	  (else (display "error: wrong usage\n")))))
+	  (else (display "and-gate: wrong usage\n")))))
 
 (define and-gate-iter
   (lambda (signal)
@@ -30,7 +30,7 @@
 (define or-gate
   (lambda (signal)
     (cond ((list? signal) (or-gate-iter signal))
-	  (else (display "error: wrong usage\n")))))
+	  (else (display "or-gate: wrong usage\n")))))
 
 (define or-gate-iter
   (lambda (signal)
