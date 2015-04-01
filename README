@@ -4,71 +4,37 @@
 				_______
 
 
-Table of Contents
-_________________
-
-1 shock
-.. 1.1 Simulating gates
-
-
-1 shock
-=======
-
-  A small package to simulate logic gates/circuits.
+# Description
+  shock is a small package to simulate logic gates and circuits. Currently,
+  `and', `not' and `or' are the only gates available. shock is written to work
+  with the chicken Scheme[1] implementation.
 
 
-1.1 Simulating gates
-~~~~~~~~~~~~~~~~~~~~
+# Loading shock to your Scheme
+After cloning the repo, you can load shock to your chicken interpreter with:
 
-  Currently the procedures in the shock package take as input a list an
-  return a list
+  > (load "/path/to/shock.scm")
+  ; loading shock.scm ...
+  loaded shock successfully
+
+# Simulating gates
+  You can simulate a 2-input and gate by running:
+
+  > (simulate-gate and-gate 2)
+
+  and this should return:
+
+  input: (#f #f) -----> #f
+  input: (#t #f) -----> #f
+  input: (#f #t) -----> #f
+  input: (#t #t) -----> #t
+  Simulation ended successfully.
 
 
-  shock currently can simulate the and, or and not gates. You can
-  simulate the output with something like:
-
-  #;1> (and-gate (list #t #f)) ; pass as input to the and gate #t #f.  f
-
-  You can simulate all the possible combinations of a 2-input and gate
-  and take the results in a list:
-
-  #;2> (map and-gate (2-inputs)) (#f #f #f #t)
-
-  For a 3-input gate one can use likewise the 3-inputs procedure:
-
-  (map or-gate (3-inputs))
-
-  #;3> (map or-gate (3-inputs)) (#f #f #t #t #t #t #t #t)
-
-  For gates with 4 or more inputs one can use n-inputs procedure:
-
-  #;4> (map or-gate (n-inputs 4)) (#f #f #f #f #t #t #t #t #t #t #t #t
-  #t #t #t #t)
-
-  You can also use the pretty-print procedure to make - as the name says
-  - the output prettier[1]:
-
-  #;5> (pretty-print (map and-gate (n-inputs 4)))
-  #f
-  #f
-  #f
-  #f
-  #f
-  #f
-  #f
-  #f
-  #f
-  #f
-  #f
-  #f
-  #t
-  #t
-  #t
-  #t
 
 
 Footnotes
 _________
 
-[1] pretty-print should make also print the input for every
-output. This is going to be fixed soon.
+[1] http://www.call-cc.org/
+
