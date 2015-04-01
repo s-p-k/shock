@@ -170,25 +170,21 @@
   (lambda (gate n)
     (pretty-print (map gate (n-inputs n)))))
 
+;;;; simulation procedures
+
 (define simulate-gate
   (lambda (gate n)
-    (simulate-gate-iter gate
-			n
-			(length (n-inputs n))
-			0)))
+      (simulate-gate-iter gate n)))
 
 (define simulate-gate-iter
-  (lambda (gate n len counter)
-    (let ((results (map gate (n-inputs n))) ; simulation results
-	  (inputs (n-inputs n))) ; all possible inputs
-      (cond ((eq? len 0) (format #t "Simulation ended successfully.~%"))
+  (lambda (gate n)
+    (let loop ((results (map gate (n-inputs n))) ; simulation results
+	       (inputs (n-inputs n)) ; all possible inputs
+	       (k 0)
+	       (cnt (length (n-inputs n))))
+      (cond ((eq? cnt 0) (format #t "Simulation ended successfully.~%"))
 	    (else (begin (format #t "input: ~A -----> ~A~%"
-				 (list-ref inputs counter)
-				 (list-ref results counter))
-			 (simulate-gate-iter gate
-					     n
-					     (- len 1)
-					     (+ counter 1))))))))
+				 (list-ref inputs k)
+				 (list-ref results k))
+			 (loop results inputs (+ k 1) (- cnt 1))))))))
 
-
-	    
