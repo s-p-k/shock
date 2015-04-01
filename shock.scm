@@ -7,7 +7,7 @@
 (define alphabet (list #f #t))
 
 
-;;;; gates definition
+;;;; gates' definition
 
 (define and-gate
   (lambda (signal)
@@ -52,7 +52,7 @@
   (lambda (signal)
     (not signal)))
 
-;;;; end of gate definition
+;;;; end of gates' definition
 
 
 ;;;; below is a simple circuit to test if the gates defined above work correctly
