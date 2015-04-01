@@ -166,10 +166,6 @@
 	       (newline)
 	       (pretty-print (cdr lst))))))
 
-(define simulate
-  (lambda (gate n)
-    (pretty-print (map gate (n-inputs n)))))
-
 ;;;; simulation procedures
 
 (define simulate-gate
