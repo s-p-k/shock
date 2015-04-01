@@ -6,7 +6,6 @@
 
 (define alphabet (list #f #t))
 
-
 ;;;; gates' definition
 
 (define and-gate
@@ -45,42 +44,11 @@
 					  (cadr signal)))
 			 (or-gate-iter (cdr signal))))))))
 
-;; define not-gate
-
 (define not-gate
   (lambda (signal)
     (not signal)))
 
 ;;;; end of gates' definition
-
-
-;;;; below is a simple circuit to test if the gates defined above work correctly
-;;;;
-;;;; A _  --- ________ ----     ---         _____
-;;;; B - |AND|   _____| OR |---|NOT|-------|     |
-;;;;      ---   |      ----     ---     ___| AND |------> OUTPUT
-;;;;      --- __|                      |    -----
-;;;; C - |AND|            E ------------
-;;;; D -  --- 
-
-
-;; define signal values for testing (everything 0)
-
-;; (define a-signal #f)
-;; (define b-signal #f)
-;; (define c-signal #f)
-;; (define d-signal #f)
-;; (define e-signal #f)
-
-;; create the circuit drawn above and simulate for the above signal values
-
-;; (define simulate
-;;   (lambda ()
-;;     (and-gate (list e-signal
-;; 		    (not-gate (or-gate (list (and-gate (list a-signal
-;; 							     b-signal))
-;; 					 (and-gate (list c-signal
-;; 							 d-signal)))))))))
 
 ;; return the number of possible combinations given a list and a number n
 
