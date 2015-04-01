@@ -147,3 +147,4 @@
 				 (list-ref results k))
 			 (loop results inputs (+ k 1) (- cnt 1))))))))
 
+(format #t "; loaded shock successfully...~%")
