@@ -30,9 +30,6 @@ After cloning the repo, you can load shock to your chicken interpreter with:
   input: (#t #t) -----> #t
   Simulation ended successfully.
 
-
-
-
 Footnotes
 _________
 
