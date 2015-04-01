@@ -178,14 +178,17 @@
 			0)))
 
 (define simulate-gate-iter
-  (lambda (gate n len w)
+  (lambda (gate n len counter)
     (let ((results (map gate (n-inputs n))) ; simulation results
 	  (inputs (n-inputs n))) ; all possible inputs
       (cond ((eq? len 0) (format #t "Simulation ended successfully.~%"))
 	    (else (begin (format #t "input: ~A -----> ~A~%"
-				 (list-ref inputs w)
-				 (list-ref results w))
+				 (list-ref inputs counter)
+				 (list-ref results counter))
 			 (simulate-gate-iter gate
 					     n
 					     (- len 1)
-					     (+ w 1))))))))
+					     (+ counter 1))))))))
+
+
+	    
