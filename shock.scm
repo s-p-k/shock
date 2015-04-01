@@ -1,13 +1,13 @@
 ;;;; See the LICENSE file for details
-;;;;
-;;;; This is a small package that is intended to help users simulate logic
-;;;; circuits.
+;;;; This is a small package that is intended to help users simulate logic gates
+;;;; and circuits.
 
 ;; Our logic alphabet
 
 (define alphabet (list #f #t))
 
-;; define and-gate
+
+;;;; gates definition
 
 (define and-gate
   (lambda (signal)
@@ -27,7 +27,6 @@
 			 (set! result (and (car signal)
 					   (cadr signal)))
 			 (and-gate-iter (cdr signal))))))))
-;; define or-gate
 
 (define or-gate
   (lambda (signal)
@@ -52,6 +51,9 @@
 (define not-gate
   (lambda (signal)
     (not signal)))
+
+;;;; end of gate definition
+
 
 ;;;; below is a simple circuit to test if the gates defined above work correctly
 ;;;;
