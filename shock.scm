@@ -8,6 +8,10 @@
 
 ;;;; gates' definition
 
+(define not-gate
+  (lambda (signal)
+    (not signal)))
+
 (define and-gate
   (lambda (signal)
     (cond ((not (list? signal))
@@ -20,6 +24,10 @@
 				  (begin (and (car signal)
 					     (and-gate (cdr signal))))
 				  (- l 1)))))))))
+
+(define nand-gate
+  (lambda (signal)
+    (not (and-gate signal))))
 
 (define or-gate
   (lambda (signal)
@@ -34,9 +42,9 @@
 					     (or-gate (cdr signal))))
 				  (- l 1)))))))))
 
-(define not-gate
+(define nor-gate
   (lambda (signal)
-    (not signal)))
+    (not (or-gate signal))))
 
 ;;;; end of gates' definition
 
