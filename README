@@ -13,8 +13,8 @@
   - nand
   - nor
 
-  shock is written with the chicken[2] Scheme implementation and the current
-  version is v0.2.
+  shock is written with the chicken[2] Scheme implementation in mind and the
+  current version is v0.2.
 
 # Loading shock to your Scheme
   After cloning the repo, you can load shock to your chicken interpreter with:
