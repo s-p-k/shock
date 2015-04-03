@@ -2,13 +2,27 @@
 
 (load "shock.scm")
 
-(display "2-input and-gate\n")
+(display "2-input and-gate:\n")
 (simulate-gate and-gate 2)
-(display "3-input and-gate\n")
+
+(display "3-input and-gate:\n")
 (simulate-gate and-gate 3)
-(display "2-input or-gate\n")
+
+(display "2-input or-gate:\n")
 (simulate-gate or-gate 2)
-(display "3-input or-gate\n")
+
+(display "3-input or-gate:\n")
 (simulate-gate or-gate 3)
 
+(display "2-input nand-gate:\n")
+(simulate-gate nand-gate 2)
+
+(display "3-input nand-gate:\n")
+(simulate-gate nand-gate 3)
+
+(display "2-input nor-gate:\n")
+(simulate-gate nor-gate 2)
+
+(display "3-input nor-gate\n")
+(simulate-gate nor-gate 3)
 
