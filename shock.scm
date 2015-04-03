@@ -120,10 +120,7 @@
 
 (define pretty-print
   (lambda (lst)
-    (if (not (null? lst))
-	(begin (display (car lst))
-	       (newline)
-	       (pretty-print (cdr lst))))))
+    (for-each print lst)))
 
 ;;;; simulation procedures
 
