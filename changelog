@@ -1,2 +1,8 @@
+## 2015-04-03 (v0.2):
+* Remove pretty-print; it's no longer needed.
+* Add nand and nor gates.
+* Fix bug in n-inputs and make simulate-gate work again.
+* Re-implement `and' and `or' gates.
+
 ## 2015-04-01 (v0.1):
 * Initial release.
