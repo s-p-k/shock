@@ -4,6 +4,20 @@
 
 (define shock-version "v0.2")
 
+(define shock-help
+  (lambda ()
+    (format #t "(shock-help)                                   : show this message.~%")
+    (format #t "(shock-available-gates)                        : show all available gates for simulation.~%")
+    (format #t "(simulate-gate [gate name] [number of inputs]) : simulate a gate of n inputs.~%")))
+
+;; list gates available for simulation
+
+(define shock-available-gates
+  (lambda ()
+    (let ((available-gates (list "and-gate" "or-gate" "nand-gate" "nor-gate")))
+      (format #t "Available gates for simulation:~%")
+      (for-each print available-gates))))
+
 ;; Our logic alphabet
 
 (define alphabet (list #f #t))
