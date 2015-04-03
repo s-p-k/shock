@@ -2,6 +2,8 @@
 ;;;; This is a small package that is intended to help users simulate logic gates
 ;;;; and circuits.
 
+(define shock-version "v0.2")
+
 ;; Our logic alphabet
 
 (define alphabet (list #f #t))
@@ -131,4 +133,5 @@
 				 (list-ref results k))
 			 (loop results inputs (+ k 1) (- cnt 1))))))))
 
-(format #t "; loaded shock successfully...~%")
+(format #t "; loaded shock-~A successfully.~%; See LICENSE file for details.~%"
+	shock-version)
