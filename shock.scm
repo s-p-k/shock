@@ -62,14 +62,6 @@
     (append lst (cons ele
 		      '()))))
 
-;; prepend element to a list
-
-(define prepend-element
-  (lambda (lst ele)
-    (cond ((null? lst) '())
-	  (else (cons ele
-		      lst)))))
-
 ;; return a n-length list of #t of #f
 
 (define list-of-bits
