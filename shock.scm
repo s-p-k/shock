@@ -22,7 +22,7 @@
 			((eq? l 1) (car signal))
 			(else (if (not (null? signal))
 				  (begin (and (car signal)
-					     (and-gate (cdr signal))))
+					      (and-gate (cdr signal))))
 				  (- l 1)))))))))
 
 (define nand-gate
@@ -124,12 +124,6 @@
 	  ((eq? n 2) (2-inputs))
 	  (else (map flatten-list (append (produce-list (n-inputs (- n 1)) #f)
 					  (produce-list (n-inputs (- n 1)) #t)))))))
-
-;; pretty-print all elements of a list
-
-(define pretty-print
-  (lambda (lst)
-    (for-each print lst)))
 
 ;;;; simulation procedures
 
