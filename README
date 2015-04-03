@@ -78,7 +78,7 @@
   Currently, n-inputs, the procedure that produces all the possible inputs of a
   n-input gate isn't able to produce them in the logic of binary numbers
   (00, 01, 10, 11 for n = 2). See The inputs for 2-input and-gate on the examples
-  above. Please report any bug at mr.dtws <AT> gmail <DOT> com 
+  above. Please report any bug at mr.dwts <AT> gmail <DOT> com 
 
 Footnotes
 _________
