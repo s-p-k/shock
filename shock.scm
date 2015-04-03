@@ -112,7 +112,7 @@
 
 (define n-inputs
   (lambda (n)
-    (cond ((eq? n 1) (list (list #f) (list #t)))
+    (cond ((eq? n 1) (list '(#f) '(#t)))
 	  ((eq? n 2) (2-inputs))
 	  (else (map flatten-list (append (produce-list (n-inputs (- n 1)) #f)
 					  (produce-list (n-inputs (- n 1)) #t)))))))
