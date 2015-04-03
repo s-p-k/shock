@@ -10,39 +10,29 @@
 
 (define and-gate
   (lambda (signal)
-	  (cond ((list? signal) (and-gate-iter signal))
-	  (else (display "and-gate: wrong usage\n")))))
-
-(define and-gate-iter
-  (lambda (signal)
-    (let ((l (length signal))
-	  (result #f))
-      (cond ((eq? l 2)
-	     (begin (set! result (and (car signal)
-				      (cadr signal)))
-		    result))
-	    (else (begin (- l 1)
-			 (set! result (and (car signal)
-					   (cadr signal)))
-			 (and-gate-iter (cdr signal))))))))
+    (cond ((not (list? signal))
+	   (if (or (eq? signal #t) (eq? signal #f)) signal
+	       (format #t "Wrong usage: and-gate~%")))
+	   (else (let ((l (length signal)))
+		  (cond ((or (eq? signal #t) (eq? signal #f)) (car signal))
+			((eq? l 1) (car signal))
+			(else (if (not (null? signal))
+				  (begin (and (car signal)
+					     (and-gate (cdr signal))))
+				  (- l 1)))))))))
 
 (define or-gate
   (lambda (signal)
-    (cond ((list? signal) (or-gate-iter signal))
-	  (else (display "or-gate: wrong usage\n")))))
-
-(define or-gate-iter
-  (lambda (signal)
-    (let ((l (length signal))
-	  (result #f))
-      (cond ((eq? l 2)
-	     (begin (set! result (or (car signal)
-				     (cadr signal)))
-		    result))
-	    (else (begin (- l 1)
-			 (set! result (or (car signal)
-					  (cadr signal)))
-			 (or-gate-iter (cdr signal))))))))
+    (cond ((not (list? signal))
+	   (if (or (eq? signal #t) (eq? signal #f)) signal
+	       (format #t "Wrong usage: or-gate~%")))
+	   (else (let ((l (length signal)))
+		  (cond ((or (eq? signal #t) (eq? signal #f)) (car signal))
+			((eq? l 1) (car signal))
+			(else (if (not (null? signal))
+				  (begin (or (car signal)
+					     (or-gate (cdr signal))))
+				  (- l 1)))))))))
 
 (define not-gate
   (lambda (signal)
@@ -56,6 +46,8 @@
   (lambda (n lst)
     (expt (length lst)
 	  n)))
+
+;; append element to a list
 
 (define append-element
   (lambda (ele lst)
