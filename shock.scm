@@ -4,11 +4,14 @@
 
 (define shock-version "v0.2")
 
+(define help-messages
+  (list "(shock-help)            :  show this message."
+	"(shock-available-gates) :  list available gates for simulation."
+	"(simulate-gate gate n)  :  simulate a gate of n inputs."))
+
 (define shock-help
   (lambda ()
-    (format #t "(shock-help)                                   : show this message.~%")
-    (format #t "(shock-available-gates)                        : show all available gates for simulation.~%")
-    (format #t "(simulate-gate [gate name] [number of inputs]) : simulate a gate of n inputs.~%")))
+    (for-each print help-messages)))
 
 ;; list gates available for simulation
 
