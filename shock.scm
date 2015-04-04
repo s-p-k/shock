@@ -24,6 +24,7 @@ or-gate
 nand-gate
 nor-gate
 xor-gate
+xnor-gate
 
 END
 )
@@ -88,7 +89,11 @@ END
   (lambda (signal)
     (cond ((not (list? signal)) (format #t "Wrong usage xor-gate~%"))
 	  (else (if (odd? (count-trues signal)) #t #f)))))
-	 
+
+(define xnor-gate
+  (lambda (signal)
+    (not (xor-gate signal))))
+
 (define nand-gate
   (lambda (signal)
     (not (and-gate signal))))
