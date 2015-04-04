@@ -4,22 +4,50 @@
 
 (define shock-version "v0.2")
 
-(define help-messages
-  (list "(shock-help)            :  show this message."
-	"(shock-available-gates) :  list available gates for simulation."
-	"(simulate-gate gate n)  :  simulate a gate of n inputs."))
+;;;; string constants for help
+
+(define help-messages #<<END
+  
+(shock-help)             :  show this message.
+(shock-examples)         :  show examples of usage.
+(shock-list-gates)       :  list available gates for simulation.
+(simulate-gate gate n)   :  simulate gate of n inputs
+
+END
+)
+
+(define available-gates #<<END
+Available gates for simulation:
+  
+and-gate
+or-gate
+nand-gate
+nor-gate
+
+END
+)
+
+(define examples #<<END
+Usage examples:
+
+(simulate-gate and-gate 2) ; simulates and gate of 2 inputs
+(simulate-gate nor-gate 4) ; simulates nor gate of 4 inputs
+END
+)
 
 (define shock-help
   (lambda ()
-    (for-each print help-messages)))
+    (format #t "~A~%" help-messages)))
+
+(define shock-examples
+  (lambda ()
+    (format #t "~A~%" examples)))
 
 ;; list gates available for simulation
 
-(define shock-available-gates
+(define shock-list-gates
   (lambda ()
-    (let ((available-gates (list "and-gate" "or-gate" "nand-gate" "nor-gate")))
-      (format #t "Available gates for simulation:~%")
-      (for-each print available-gates))))
+      (format #t "~A~%" available-gates)))
 
 ;; Our logic alphabet
 
@@ -152,3 +180,4 @@
 
 (format #t "; loaded shock-~A successfully.~%; See LICENSE file for details.~%"
 	shock-version)
+(format #t "; type (shock-help) and (shock-examples) for usage examples.~%")
