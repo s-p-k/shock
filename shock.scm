@@ -56,67 +56,6 @@ END
 
 (define alphabet (list #f #t))
 
-(define count-trues
-  (lambda (lst)
-    (let loop ((l lst)
-	       (cnt 0))
-      (cond ((null? l) cnt)
-	    ((eq? (car l) #t) (loop (cdr l) (+ cnt 1)))
-	    (else (loop (cdr l) cnt))))))
-
-;;;; gates' definition
-
-(define not-gate
-  (lambda (signal)
-    (not signal)))
-
-(define and-gate
-  (lambda (signal)
-    (cond ((not (list? signal))
-	   (if (or (eq? signal #t) (eq? signal #f)) signal
-	       (format #t "Wrong usage: and-gate~%")))
-	   (else (let ((l (length signal)))
-		  (cond ((or (eq? signal #t) (eq? signal #f)) (car signal))
-			((eq? l 1) (car signal))
-			(else (if (not (null? signal))
-				  (begin (and (car signal)
-					      (and-gate (cdr signal))))
-				  (- l 1)))))))))
-
-;; if count-trues is odd then xor-gate returns #t, #f otherwise
-
-(define xor-gate
-  (lambda (signal)
-    (cond ((not (list? signal)) (format #t "Wrong usage xor-gate~%"))
-	  (else (if (odd? (count-trues signal)) #t #f)))))
-
-(define xnor-gate
-  (lambda (signal)
-    (not (xor-gate signal))))
-
-(define nand-gate
-  (lambda (signal)
-    (not (and-gate signal))))
-
-(define or-gate
-  (lambda (signal)
-    (cond ((not (list? signal))
-	   (if (or (eq? signal #t) (eq? signal #f)) signal
-	       (format #t "Wrong usage: or-gate~%")))
-	   (else (let ((l (length signal)))
-		  (cond ((or (eq? signal #t) (eq? signal #f)) (car signal))
-			((eq? l 1) (car signal))
-			(else (if (not (null? signal))
-				  (begin (or (car signal)
-					     (or-gate (cdr signal))))
-				  (- l 1)))))))))
-
-(define nor-gate
-  (lambda (signal)
-    (not (or-gate signal))))
-
-;;;; end of gates' definition
-
 ;; return the number of possible combinations given a list and a number n
 
 (define possible-combinations
@@ -185,6 +124,68 @@ END
 	  ((eq? n 2) (2-inputs))
 	  (else (map flatten-list (append (produce-list (n-inputs (- n 1)) #f)
 					  (produce-list (n-inputs (- n 1)) #t)))))))
+
+(define count-trues
+  (lambda (lst)
+    (let loop ((l lst)
+	       (cnt 0))
+      (cond ((null? l) cnt)
+	    ((eq? (car l) #t) (loop (cdr l) (+ cnt 1)))
+	    (else (loop (cdr l) cnt))))))
+
+;;;; gates' definition
+
+(define not-gate
+  (lambda (signal)
+    (not signal)))
+
+(define and-gate
+  (lambda (signal)
+    (cond ((not (list? signal))
+	   (if (or (eq? signal #t) (eq? signal #f)) signal
+	       (format #t "Wrong usage: and-gate~%")))
+	   (else (let ((l (length signal)))
+		  (cond ((or (eq? signal #t) (eq? signal #f)) (car signal))
+			((eq? l 1) (car signal))
+			(else (if (not (null? signal))
+				  (begin (and (car signal)
+					      (and-gate (cdr signal))))
+				  (- l 1)))))))))
+
+;; if count-trues is odd then xor-gate returns #t, #f otherwise
+
+(define xor-gate
+  (lambda (signal)
+    (cond ((not (list? signal)) (format #t "Wrong usage xor-gate~%"))
+	  (else (if (odd? (count-trues signal)) #t #f)))))
+
+(define xnor-gate
+  (lambda (signal)
+    (not (xor-gate signal))))
+
+(define nand-gate
+  (lambda (signal)
+    (not (and-gate signal))))
+
+(define or-gate
+  (lambda (signal)
+    (cond ((not (list? signal))
+	   (if (or (eq? signal #t) (eq? signal #f)) signal
+	       (format #t "Wrong usage: or-gate~%")))
+	   (else (let ((l (length signal)))
+		  (cond ((or (eq? signal #t) (eq? signal #f)) (car signal))
+			((eq? l 1) (car signal))
+			(else (if (not (null? signal))
+				  (begin (or (car signal)
+					     (or-gate (cdr signal))))
+				  (- l 1)))))))))
+
+(define nor-gate
+  (lambda (signal)
+    (not (or-gate signal))))
+
+;;;; end of gates' definition
+
 
 ;;;; simulation procedures
 
