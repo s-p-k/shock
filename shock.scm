@@ -23,6 +23,7 @@ and-gate
 or-gate
 nand-gate
 nor-gate
+xor-gate
 
 END
 )
@@ -54,6 +55,14 @@ END
 
 (define alphabet (list #f #t))
 
+(define count-trues
+  (lambda (lst)
+    (let loop ((l lst)
+	       (cnt 0))
+      (cond ((null? l) cnt)
+	    ((eq? (car l) #t) (loop (cdr l) (+ cnt 1)))
+	    (else (loop (cdr l) cnt))))))
+
 ;;;; gates' definition
 
 (define not-gate
@@ -73,6 +82,13 @@ END
 					      (and-gate (cdr signal))))
 				  (- l 1)))))))))
 
+;; if count-trues is odd then xor-gate returns #t, #f otherwise
+
+(define xor-gate
+  (lambda (signal)
+    (cond ((not (list? signal)) (format #t "Wrong usage xor-gate~%"))
+	  (else (if (odd? (count-trues signal)) #t #f)))))
+	 
 (define nand-gate
   (lambda (signal)
     (not (and-gate signal))))
