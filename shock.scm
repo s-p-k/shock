@@ -32,6 +32,7 @@ Usage examples:
 
 (simulate-gate and-gate 2) ; simulates and gate of 2 inputs
 (simulate-gate nor-gate 4) ; simulates nor gate of 4 inputs
+
 END
 )
 
