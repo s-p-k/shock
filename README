@@ -15,6 +15,8 @@
   - xor
   - xnor
 
+  From circuits, currently only half adder is available.
+
   shock is written with the chicken[2] Scheme implementation in mind and the
   current version is v0.2.
 
