@@ -184,6 +184,21 @@ END
   (lambda (signal)
     (not (or-gate signal))))
 
+(define 1-bit-half-adder
+  (lambda ()
+    (format #t "                      carry sum~%")
+    (let loop ((inputs (n-inputs 2)) ; all possible combinations
+	  (sum (map xor-gate (n-inputs 2)))
+	  (carry (map and-gate (n-inputs 2)))
+	  (k 0)
+	  (cnt (length (n-inputs 2))))
+      (cond ((eq? cnt 0) (format #t "Simulation ended successfully.~%"))
+	    (else (begin (format #t "input: ~A -----> ~A    ~A~%"
+				 (list-ref inputs k)
+				 (list-ref sum k)
+				 (list-ref carry k))
+			 (loop inputs sum carry (+ k 1) (- cnt 1))))))))
+
 ;;;; end of gates' definition
 
 
