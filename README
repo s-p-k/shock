@@ -12,6 +12,8 @@
   - or
   - nand
   - nor
+  - xor
+  - xnor
 
   shock is written with the chicken[2] Scheme implementation in mind and the
   current version is v0.2.
