@@ -11,8 +11,8 @@
 
   From circuits, currently only half adder is available.
 
-  shock is written with the chicken[2] Scheme implementation in mind and the
-  current version is v0.2.
+  shock is written with the chicken[chicken](http://www.call-cc.org/) Scheme
+  implementation in mind and the current version is v0.2.
 
 # Loading shock to your Scheme
   After cloning the repo, you can load shock to your chicken interpreter with:
@@ -125,10 +125,9 @@
   (00, 01, 10, 11 for n = 2). See The inputs for 2-input and-gate on the examples
   above. Please report any bug at mr.dwts <AT> gmail <DOT> com 
 
-Footnotes
+# Footnotes
 _________
 
 [1]: not gate is also available but it makes sense to use it only when
 building circuits.
-[2]: http://www.call-cc.org/
 
