@@ -28,14 +28,37 @@
   ; See LICENSE file for details.
 ```
 
-# Getting help after loading shock to your interpreter.
-  You can also get help on how to use shock by running the two helping
-  procedures: shock-help and shock available-gates.
+# Getting help after loading shock to your interpreter. You can also get help on
+  how to use shock by using helping procedures.
 
-  To list all available gates for simulation run:
+  These procedures are:
 
-``` scheme
-  (shock-available-gates)
+  ``` scheme
+  (shock-help) ; print help for shock
+  ```
+  ``` scheme
+  (shock-examples) ; print some examples
+  ```
+  ``` scheme
+  (shock-list-gates) ; print available gates for simulation
+  ```
+
+  ## printing brief usage description
+
+
+  ``` scheme
+  (shock-help)
+
+  (shock-help)             :  show this message.
+  (shock-examples)         :  show examples of usage.
+  (shock-list-gates)       :  list available gates for simulation.
+  (simulate-gate gate n)   :  simulate gate of n inputs
+
+  ```
+
+  ## listing available gates for simulation
+  ``` scheme
+  (shock-list-gates)
   Available gates for simulation:
   and-gate
   or-gate
@@ -44,11 +67,23 @@
   xor-gate
   xnor-gate
   
-```
+  ```
+
+  ## usage examples
+  ``` scheme
+  (shock-examples)
+  Usage examples:
+
+  (simulate-gate and-gate 2) ; simulates and gate of 2 inputs
+  (simulate-gate nor-gate 4) ; simulates nor gate of 4 inputs
+
+  ```
+
   This means we can call simulate-gate with each of the gates listed above.
 
   You can also use the shock-help procedure which has a brief description on how
   to use shock.
+
 
 # Simulating gates - two examples
   To simulate a gate of n inputs, all the user has to do is call simulate-gate
@@ -82,26 +117,6 @@
   input: (#t #t #t) -----> #f
   Simulation ended successfully
 ```
-
-# Getting help inside the interpreter
-  There are some helping procedures defined in shock. These procedures are
-  useful when shock is already loaded and you want some brief documentation.
-
-  These procedures are:
-
-  ``` scheme
-  (shock-help) ; print help for shock
-  ```
-  ``` scheme
-  (shock-examples) ; print some examples
-  ```
-  ``` scheme
-  (shock-list-gates) ; print available gates for simulation
-  ```
-  
-
-
-
 # Known bugs
 
   Currently, n-inputs, the procedure that produces all the possible inputs of a
