@@ -43,8 +43,7 @@
   (shock-list-gates) ; print available gates for simulation
   ```
 
-  ## Printing brief usage description
-
+## Printing brief usage description
 
   ``` scheme
   (shock-help)
@@ -56,7 +55,8 @@
 
   ```
 
-  ## Listing available gates for simulation
+## Listing available gates for simulation
+
   ``` scheme
   (shock-list-gates)
   Available gates for simulation:
@@ -69,7 +69,8 @@
   
   ```
 
-  ## Usage examples
+## Usage examples
+
   ``` scheme
   (shock-examples)
   Usage examples:
@@ -90,22 +91,22 @@
   procedure with the appropriate number of inputs. For instance you can simulate
   a 2-input and gate by running:
 
-``` scheme
+  ``` scheme
   (simulate-gate and-gate 2)
-```
+  ```
   and this should return:
 
-``` scheme
+  ``` scheme
   input: (#f #f) -----> #f
   input: (#t #f) -----> #f
   input: (#f #t) -----> #f
   input: (#t #t) -----> #t
   Simulation ended successfully.
-```
+  ```
 
   Likewise, to simulate a 3-input nor gate all we have to do is:
 
-``` scheme
+  ``` scheme
   (simulate-gate nor-gate 3)
   input: (#f #f #f) -----> #t
   input: (#t #f #f) -----> #f
@@ -116,7 +117,7 @@
   input: (#f #t #t) -----> #f
   input: (#t #t #t) -----> #f
   Simulation ended successfully
-```
+  ```
 # Known bugs
 
   Currently, n-inputs, the procedure that produces all the possible inputs of a
