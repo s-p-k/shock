@@ -10,7 +10,7 @@
   - xnor
 
   shock is written with the [chicken](http://www.call-cc.org/) Scheme
-  implementation in mind and the current version is v0.2.
+  implementation in mind and the current version is v0.3.
 
 # Loading shock to your Scheme
   After cloning the repo, you can load shock to your chicken interpreter with:
@@ -22,7 +22,7 @@
 
 ``` scheme
   ; loading shock.scm ...
-  ; loaded shock-v0.2 successfully.
+  ; loaded shock-v0.3 successfully.
   ; See LICENSE file for details.
 ```
 
@@ -68,7 +68,7 @@
   ```
 
   From circuits, currently only half adder is available.
-  As of version 0.2, half-adder isn't mentioned on the helping procedures, but
+  As of version 0.3, half-adder isn't mentioned on the helping procedures, but
   you can run it with:
 
   ``` scheme
