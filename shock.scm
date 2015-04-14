@@ -70,7 +70,7 @@ END
   (lambda (item)
     (cond ((eq? item 1-bit-half-adder)
 	   #t)
-	   (else #f))))
+	  (else #f))))
 
 ;; return the number of possible combinations given a list and a number n
 
