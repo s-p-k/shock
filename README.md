@@ -9,8 +9,6 @@
   - xor
   - xnor
 
-  From circuits, currently only half adder is available.
-
   shock is written with the [chicken](http://www.call-cc.org/) Scheme
   implementation in mind and the current version is v0.2.
 
@@ -55,7 +53,7 @@
 
   ```
 
-## Listing available gates for simulation
+## Listing available gates and circuits for simulation
 
   ``` scheme
   (shock-list-gates)
@@ -67,6 +65,14 @@
   xor-gate
   xnor-gate
   
+  ```
+
+  From circuits, currently only half adder is available.
+  As of version 0.2, half-adder isn't mentioned on the helping procedures, but
+  you can run it with:
+
+  ``` scheme
+  (1-bit-half-adder)
   ```
 
 ## Usage examples
