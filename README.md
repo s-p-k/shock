@@ -1,9 +1,3 @@
-				_______
-
-				 SHOCK
-				_______
-
-
 # Description
   shock is a small package to simulate logic gates and circuits. Currently,
   shock supports the following gates for simulation[1]:
@@ -23,6 +17,7 @@
 # Loading shock to your Scheme
   After cloning the repo, you can load shock to your chicken interpreter with:
 
+``` scheme
   > (load "/path/to/shock.scm")
 
   If loading was succesfull, you should see something like this:
@@ -30,6 +25,7 @@
   ; loading shock.scm ...
   ; loaded shock-v0.2 successfully.
   ; See LICENSE file for details.
+```
 
 # Getting help after loading shock to your interpreter.
   You can also get help on how to use shock by running the two helping
