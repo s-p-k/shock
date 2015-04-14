@@ -41,6 +41,9 @@
   or-gate
   nand-gate
   nor-gate
+  xor-gate
+  xnor-gate
+  
 ```
   This means we can call simulate-gate with each of the gates listed above.
 
@@ -54,9 +57,10 @@
 
 ``` scheme
   (simulate-gate and-gate 2)
-
+```
   and this should return:
 
+``` scheme
   input: (#f #f) -----> #f
   input: (#t #f) -----> #f
   input: (#f #t) -----> #f
