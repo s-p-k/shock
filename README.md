@@ -18,7 +18,7 @@
   After cloning the repo, you can load shock to your chicken interpreter with:
 
 ``` scheme
-  > (load "/path/to/shock.scm")
+  (load "/path/to/shock.scm")
 ```
   If loading was succesfull, you should see something like this:
 
@@ -34,13 +34,14 @@
 
   To list all available gates for simulation run:
 
-  > (shock-available-gates)
+``` scheme
+  (shock-available-gates)
   Available gates for simulation:
   and-gate
   or-gate
   nand-gate
   nor-gate
-
+```
   This means we can call simulate-gate with each of the gates listed above.
 
   You can also use the shock-help procedure which has a brief description on how
@@ -51,7 +52,8 @@
   procedure with the appropriate number of inputs. For instance you can simulate
   a 2-input and gate by running:
 
-  > (simulate-gate and-gate 2)
+``` scheme
+  (simulate-gate and-gate 2)
 
   and this should return:
 
@@ -60,10 +62,12 @@
   input: (#f #t) -----> #f
   input: (#t #t) -----> #t
   Simulation ended successfully.
+```
 
   Likewise, to simulate a 3-input nor gate all we have to do is:
 
-  > (simulate-gate nor-gate 3)
+``` scheme
+  (simulate-gate nor-gate 3)
   input: (#f #f #f) -----> #t
   input: (#t #f #f) -----> #f
   input: (#f #t #f) -----> #f
@@ -73,6 +77,7 @@
   input: (#f #t #t) -----> #f
   input: (#t #t #t) -----> #f
   Simulation ended successfully
+```
 
 # Known bugs
 
