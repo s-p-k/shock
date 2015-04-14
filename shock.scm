@@ -2,7 +2,7 @@
 ;;;; This is a small package that is intended to help users simulate logic gates
 ;;;; and circuits.
 
-(define shock-version "v0.3")
+(define shock-version "v0.2")
 
 ;;;; string constants for help
 
@@ -55,6 +55,22 @@ END
 ;; Our logic alphabet
 
 (define alphabet (list #f #t))
+
+(define gate?
+  (lambda (item)
+    (cond ((or (eq? item and-gate)
+	       (eq? item or-gate)
+	       (eq? item nand-gate)
+	       (eq? item nor-gate)
+	       (eq? item xor-gate)
+	       (eq? item xnor-gate)) #t)
+	  (else #f))))
+
+(define circuit?
+  (lambda (item)
+    (cond ((eq? item 1-bit-half-adder)
+	   #t)
+	   (else #f))))
 
 ;; return the number of possible combinations given a list and a number n
 
@@ -215,6 +231,13 @@ END
 				 (list-ref inputs k)
 				 (list-ref results k))
 			 (loop results inputs (+ k 1) (- cnt 1))))))))
+
+(define simulate
+  (lambda (item . rest-of-items)
+    (cond ((null? rest-of-items)
+	   (if (circuit? item)
+	       (1-bit-half-adder)))
+	  (else (if (gate? item) (simulate-gate item (car rest-of-items)))))))
 
 (format #t "; loaded shock-~A successfully.~%; See LICENSE file for details.~%"
 	shock-version)
