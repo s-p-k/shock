@@ -19,9 +19,10 @@
 
 ``` scheme
   > (load "/path/to/shock.scm")
-
+```
   If loading was succesfull, you should see something like this:
 
+``` scheme
   ; loading shock.scm ...
   ; loaded shock-v0.2 successfully.
   ; See LICENSE file for details.
