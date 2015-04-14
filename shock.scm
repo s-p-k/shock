@@ -2,7 +2,7 @@
 ;;;; This is a small package that is intended to help users simulate logic gates
 ;;;; and circuits.
 
-(define shock-version "v0.2")
+(define shock-version "v0.3")
 
 ;;;; string constants for help
 
