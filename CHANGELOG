@@ -1,3 +1,9 @@
+## 2015-04-14 (v0.3):
+* Add helping procedures to provide help inside the interpreter.
+* Add 1-bit-half-adder
+* Add xor-gate and xnor-gate.
+* Add strings constants for brief in-repl documentation.
+
 ## 2015-04-03 (v0.2):
 * Remove pretty-print; it's no longer needed.
 * Add nand and nor gates.
