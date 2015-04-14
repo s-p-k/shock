@@ -11,7 +11,7 @@
 
   From circuits, currently only half adder is available.
 
-  shock is written with the chicken[chicken](http://www.call-cc.org/) Scheme
+  shock is written with the [chicken](http://www.call-cc.org/) Scheme
   implementation in mind and the current version is v0.2.
 
 # Loading shock to your Scheme
