@@ -43,7 +43,7 @@
   (shock-list-gates) ; print available gates for simulation
   ```
 
-  ## printing brief usage description
+  ## Printing brief usage description
 
 
   ``` scheme
@@ -56,7 +56,7 @@
 
   ```
 
-  ## listing available gates for simulation
+  ## Listing available gates for simulation
   ``` scheme
   (shock-list-gates)
   Available gates for simulation:
@@ -69,7 +69,7 @@
   
   ```
 
-  ## usage examples
+  ## Usage examples
   ``` scheme
   (shock-examples)
   Usage examples:
