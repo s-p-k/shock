@@ -83,6 +83,25 @@
   Simulation ended successfully
 ```
 
+# Getting help inside the interpreter
+  There are some helping procedures defined in shock. These procedures are
+  useful when shock is already loaded and you want some brief documentation.
+
+  These procedures are:
+
+  ``` scheme
+  (shock-help) ; print help for shock
+  ```
+  ``` scheme
+  (shock-examples) ; print some examples
+  ```
+  ``` scheme
+  (shock-list-gates) ; print available gates for simulation
+  ```
+  
+
+
+
 # Known bugs
 
   Currently, n-inputs, the procedure that produces all the possible inputs of a
