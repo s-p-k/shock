@@ -28,8 +28,8 @@
   ; See LICENSE file for details.
 ```
 
-# Getting help after loading shock to your interpreter. You can also get help on
-  how to use shock by using helping procedures.
+# Getting help after loading shock to your interpreter.
+  You can also get help on how to use shock by using helping procedures.
 
   These procedures are:
 
