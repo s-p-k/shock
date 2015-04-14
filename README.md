@@ -15,16 +15,17 @@
 # Loading shock to your Scheme
   After cloning the repo, you can load shock to your chicken interpreter with:
 
-``` scheme
+  ``` scheme
   (load "/path/to/shock.scm")
-```
+  ```
   If loading was succesfull, you should see something like this:
 
-``` scheme
+  ``` scheme
   ; loading shock.scm ...
   ; loaded shock-v0.3 successfully.
   ; See LICENSE file for details.
-```
+  ; type (shock-help) and (shock-examples) for usage examples.
+  ```
 
 # Getting help after loading shock to your interpreter.
   You can also get help on how to use shock by using helping procedures.
