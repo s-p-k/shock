@@ -1,7 +1,7 @@
 # Description
   shock is a small package to simulate logic gates and circuits. Currently,
   shock supports the following gates for simulation[1]:
-  
+
   - and
   - or
   - nand
