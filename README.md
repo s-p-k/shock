@@ -27,6 +27,8 @@
   ; type (shock-help) and (shock-examples) for usage examples.
   ```
 
+![alt tag](img/loadshock.png)
+
 # Getting help after loading shock to your interpreter.
   You can also get help on how to use shock by using helping procedures.
 
@@ -35,12 +37,15 @@
   ``` scheme
   (shock-help) ; print help for shock
   ```
+
   ``` scheme
   (shock-examples) ; print some examples
   ```
+
   ``` scheme
   (shock-list-gates) ; print available gates for simulation
   ```
+
 
 ## Printing brief usage description
 
@@ -53,6 +58,12 @@
   (simulate-gate gate n)   :  simulate gate of n inputs
 
   ```
+
+![alt tag](img/shockhelp.png)
+
+
+
+
 
 ## Listing available gates and circuits for simulation
 
@@ -68,6 +79,9 @@
   
   ```
 
+![alt tag](img/listgates.png)
+
+
   From circuits, currently only half adder is available.
   As of version 0.3, half-adder isn't mentioned on the helping procedures, but
   you can run it with:
@@ -75,6 +89,8 @@
   ``` scheme
   (1-bit-half-adder)
   ```
+
+![alt tag](img/hadder.png)
 
 ## Usage examples
 
@@ -86,6 +102,8 @@
   (simulate-gate nor-gate 4) ; simulates nor gate of 4 inputs
 
   ```
+![alt tag](img/shockexamples.png)
+
 
   This means we can call simulate-gate with each of the gates listed above.
 
@@ -111,6 +129,8 @@
   Simulation ended successfully.
   ```
 
+![alt tag](img/sim2and.png)
+
   Likewise, to simulate a 3-input nor gate all we have to do is:
 
   ``` scheme
@@ -125,6 +145,10 @@
   input: (#t #t #t) -----> #f
   Simulation ended successfully
   ```
+
+![alt tag](img/sim3nor.png)
+
+
 # Known bugs
 
   Currently, n-inputs, the procedure that produces all the possible inputs of a
